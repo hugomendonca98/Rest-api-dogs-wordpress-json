@@ -10,12 +10,12 @@
 
         // Caso o tente buscar sem um usuário logado.
         if($user_id === 0) {
-            $response = new WP_Error('error', 'Usuário não possui permissão.', 'status' => 401);
+            $response = new WP_Error('error', 'Usuário não possui permissão.', ['status' => 401]);
 
             return rest_ensure_response($response);
         }
 
-        // Monstando as informçaões que desejo retornar.
+        // Mostando as informçaões que desejo retornar.
         $response = [
             'id' => $user_id,
             'username' => $user->user_login,
