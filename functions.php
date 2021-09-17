@@ -1,10 +1,17 @@
 <?php 
-remove_action('rest_api_init', 'create_initial_rest_routes', 99);
+/*remove_action('rest_api_init', 'create_initial_rest_routes', 99);*/
 
 $dirbase = get_template_directory();
 
 require_once $dirbase . '/endpoints/user_post.php';
 require_once $dirbase . '/endpoints/user_get.php';
+
+require_once $dirbase . '/endpoints/photo_post.php';
+
+// Mudando o tamanho da imgem larga.
+update_option('large_size_w', 1000); // Largura de 1000px.
+update_option('large_size_h', 1000); // Altura de 1000px.
+update_option('large_crop', 1); // Se a imagem não for quadrada deve cortar.
 
 function change_api() {
     return 'json';
