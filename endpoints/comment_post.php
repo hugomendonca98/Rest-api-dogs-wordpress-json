@@ -6,7 +6,7 @@
         $user = wp_get_current_user();
         $post = get_post($post_id);
         // int para o id sempre vim em tipo númerico.
-        $user_id = $user->ID;
+        $user_id = (int)$user->id;
 
         // Verifica se o usuário logado é o criador do post ou se o post existe.
         if($user_id === 0){
@@ -25,14 +25,15 @@
         $response = [
             'comment_author' => $user->user_login,
             'comment_content' => $comment,
-            'comment_post_id' => $post_id,
+            'comment_post_ID' => $post_id,
             'user_id' => $user_id,
         ];
 
         $comment_id = wp_insert_comment($response);
+        
         $comment = get_comment($comment_id);
         
-        return rest_ensure_response($comment);
+        return rest_ensure_response($response);
         
     }
 

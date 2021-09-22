@@ -10,6 +10,7 @@ require_once $dirbase . '/endpoints/photo_post.php';
 require_once $dirbase . '/endpoints/photo_delete.php';
 
 require_once $dirbase . '/endpoints/comment_post.php';
+require_once $dirbase . '/endpoints/comment_get.php';
 
 // Mudando o tamanho da imgem larga.
 update_option('large_size_w', 1000); // Largura de 1000px.
