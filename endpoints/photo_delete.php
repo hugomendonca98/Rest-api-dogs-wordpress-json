@@ -16,7 +16,7 @@
             return rest_ensure_response($response);
         }
 
-        // Pega o id da imagem relacionado ao post.
+        // Pega o id da imagem relacionado ao post
         $attachement_id = get_post_meta($post_id, 'img', true);
         // deleta a imagem relacionada ao post.
         wp_delete_attachment($attachement_id, true);
