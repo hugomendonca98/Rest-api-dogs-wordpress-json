@@ -3,6 +3,7 @@
     // Função para buscar as informações do usuário logado.
     function api_comment_get($request) {
         $post_id = $request['id'];
+        $user_id = $user;
 
         $comments = get_comments([
             'post_id' => $post_id,
