@@ -11,10 +11,10 @@ add_filter('rest_endpoints', function($endpoints){
     return $endpoints;
 });
 
-
-
+// Pegando o diretorio padrão do thema.
 $dirbase = get_template_directory();
 
+// Importando as rotas/endpoints criados.
 require_once $dirbase . '/endpoints/user_post.php';
 require_once $dirbase . '/endpoints/user_get.php';
 
@@ -25,11 +25,14 @@ require_once $dirbase . '/endpoints/photo_delete.php';
 require_once $dirbase . '/endpoints/comment_post.php';
 require_once $dirbase . '/endpoints/comment_get.php';
 
+require_once $dirbase . '/endpoints/password.php';
+
 // Mudando o tamanho da imgem larga.
 update_option('large_size_w', 1000); // Largura de 1000px.
 update_option('large_size_h', 1000); // Altura de 1000px.
 update_option('large_crop', 1); // Se a imagem não for quadrada deve cortar.
 
+// Mudando o prefixo da rota padrão de endpoints do wordpress, no caso www.site.com/wp-json para apenas json.
 function change_api() {
     return 'json';
 }
