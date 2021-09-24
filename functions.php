@@ -1,5 +1,17 @@
 <?php 
+
+// Esse action é para remover todas as rotas de api padrão do wordpress, porem se for ultilizar a parte administrativa do wordpress não usar.
+
 /*remove_action('rest_api_init', 'create_initial_rest_routes', 99);*/
+
+// Para remover apenas endpoints especificos.
+add_filter('rest_endpoints', function($endpoints){
+    unset($endpoints['/wp/v2/users']);
+    unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+    return $endpoints;
+});
+
+
 
 $dirbase = get_template_directory();
 
