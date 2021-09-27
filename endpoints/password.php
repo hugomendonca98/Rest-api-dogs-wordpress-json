@@ -48,7 +48,7 @@
         
     }
 
-    // Registrando a função de delete na rota.
+    // Registrando a função de lost na rota.
     function register_api_password_lost() {
         register_rest_route('api', '/password/lost', [
             'methods' => WP_REST_Server::CREATABLE,
@@ -59,7 +59,6 @@
     add_action('rest_api_init', 'register_api_password_lost');
 
     // Password Reset
-
     function api_password_reset($request) {
         $login = $request['login'];
         $password = $request['password'];
@@ -84,7 +83,7 @@
     }
 
 
-    // Registrando a função de delete na rota.
+    // Registrando a função de reset na rota.
     function register_api_password_reset() {
         register_rest_route('api', '/password/reset', [
             'methods' => WP_REST_Server::CREATABLE,

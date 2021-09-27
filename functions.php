@@ -27,6 +27,8 @@ require_once $dirbase . '/endpoints/comment_get.php';
 
 require_once $dirbase . '/endpoints/password.php';
 
+require_once $dirbase . '/endpoints/stats_get.php';
+
 // Mudando o tamanho da imgem larga.
 update_option('large_size_w', 1000); // Largura de 1000px.
 update_option('large_size_h', 1000); // Altura de 1000px.
